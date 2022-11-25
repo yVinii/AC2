@@ -1,12 +1,12 @@
 package Telas;
 
-import Classes.Funcionario;
+import Classes.Login;
 import Conexoes.MySQL;
 import javax.swing.JOptionPane;
 
 public class TelaDeLogin extends javax.swing.JFrame {
     MySQL mySQLcon;
-    Funcionario novoFuncionario;
+    Login novoLogin;
     public TelaDeLogin() {
         initComponents();
         mySQLcon = new MySQL();
@@ -168,26 +168,27 @@ public class TelaDeLogin extends javax.swing.JFrame {
 
     private void butEntrarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_butEntrarMouseClicked
         mySQLcon.conectaBanco();
-        novoFuncionario= new Funcionario();
+        novoLogin= new Login();
 
         String usuario = txtUsuario.getText();
+        String senha = TxtSenha.getText();
         try {this.mySQLcon.executarSQL(
                    "SELECT "
-                    + "nome,"
-                    + "cpf,"
+                    + "usuario,"
                     + "senha"
                  + " FROM"
-                     + " cadastroclientes"
+                     + " login"
                  + " WHERE"
-                     + " nome = '" + usuario + "'"
+                     + " usuario = '" + usuario + "'"
+                 + " AND"
+                     + " senha = '" + senha + "'"
                 + ";"
             );
         while(mySQLcon.getResultSet().next()){
-            novoFuncionario.setNome(mySQLcon.getResultSet().getString(1));
-            novoFuncionario.setCpf(mySQLcon.getResultSet().getString(2));
-            novoFuncionario.setSenha(mySQLcon.getResultSet().getString(3));
+            novoLogin.setUsuario(mySQLcon.getResultSet().getString(1));
+            novoLogin.setSenha(mySQLcon.getResultSet().getString(2));
         }
-        if(novoFuncionario.getNome().equals("")){
+        if(novoLogin.getUsuario().equals("")){
             JOptionPane.showMessageDialog(null, "Houve algum problema ao consultar cadastro");
         }else{
             JOptionPane.showMessageDialog(null, "Bem Vindo");

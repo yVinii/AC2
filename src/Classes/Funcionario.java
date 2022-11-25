@@ -3,10 +3,18 @@ public class Funcionario {
     // Atributos:
     private String nome = "";
     private String cpf = "";
-    private String senha = "";
-    
+    private String email = "";
+
     // Métodos: 
 
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+    
     public String getNome() {
         return nome;
     }
@@ -23,17 +31,10 @@ public class Funcionario {
         this.cpf = cpf;
     }
 
-    public String getSenha() {
-        return senha;
-    }
-
-    public void setSenha(String senha) {
-        this.senha = senha;
-    }
     
     public void limpaFuncionario(){
     nome =  "";
-    senha = "";
     cpf = "";
+    email = "";
     }
 }

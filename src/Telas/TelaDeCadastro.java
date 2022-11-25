@@ -1,11 +1,11 @@
 package Telas;
-import Classes.Funcionario;
+import Classes.Login;
 import Conexoes.MySQL;
 import javax.swing.JOptionPane;
 
 public class TelaDeCadastro extends javax.swing.JFrame {
     MySQL mySQLcon;
-    Funcionario novoFuncionario;
+    Login novoLogin;
     public TelaDeCadastro() {
         initComponents();
         mySQLcon = new MySQL();
@@ -21,7 +21,6 @@ public class TelaDeCadastro extends javax.swing.JFrame {
         butFechar = new javax.swing.JLabel();
         butMenuLog = new javax.swing.JLabel();
         butMenuCad = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
         Mostrar2 = new javax.swing.JLabel();
         Esconder = new javax.swing.JLabel();
         txtSenha = new javax.swing.JPasswordField();
@@ -30,7 +29,6 @@ public class TelaDeCadastro extends javax.swing.JFrame {
         Mostrar = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         txtNome = new javax.swing.JTextField();
-        txtCpf = new javax.swing.JFormattedTextField();
         jLabel7 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -108,11 +106,6 @@ public class TelaDeCadastro extends javax.swing.JFrame {
         });
         getContentPane().add(butMenuCad, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 310, 120, 70));
 
-        jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(0, 0, 51));
-        jLabel4.setText("CPF.");
-        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 180, 150, 70));
-
         Mostrar2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/icons8-usuário-60.png"))); // NOI18N
         getContentPane().add(Mostrar2, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 250, 70, 70));
 
@@ -161,16 +154,6 @@ public class TelaDeCadastro extends javax.swing.JFrame {
         txtNome.setForeground(new java.awt.Color(0, 0, 51));
         getContentPane().add(txtNome, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 250, 250, 70));
 
-        txtCpf.setForeground(new java.awt.Color(0, 0, 51));
-        try {
-            txtCpf.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("###.###.###-##")));
-        } catch (java.text.ParseException ex) {
-            ex.printStackTrace();
-        }
-        txtCpf.setHorizontalAlignment(javax.swing.JTextField.LEFT);
-        txtCpf.setFont(new java.awt.Font("Segoe UI", 1, 32)); // NOI18N
-        getContentPane().add(txtCpf, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 250, 250, 70));
-
         jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/marca dagua (1).png"))); // NOI18N
         getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 0, 200, -1));
 
@@ -200,23 +183,19 @@ public class TelaDeCadastro extends javax.swing.JFrame {
         int status=0;
         mySQLcon.conectaBanco();
        
-        novoFuncionario = new Funcionario();
-        novoFuncionario.setNome(txtNome.getText());
-        novoFuncionario.setSenha(txtSenha.getText());
-        novoFuncionario.setCpf(txtCpf.getText());
-
+        novoLogin = new Login();
+        novoLogin.setUsuario(txtNome.getText());
+        novoLogin.setSenha(txtSenha.getText());
         try {
-            status = this.mySQLcon.insertSQL("INSERT INTO cadastroclientes ("
-                    + "nome,"
-                    + "senha,"
-                    + "cpf"
+            status = this.mySQLcon.insertSQL("INSERT INTO login ("
+                    + "usuario,"
+                    + "senha"
                 + ") VALUES ("
-                    + "'" + novoFuncionario.getNome() + "',"
-                    + "'" + novoFuncionario.getSenha() + "',"
-                    + "'" + novoFuncionario.getCpf() + "'"
+                    + "'" + novoLogin.getUsuario()+ "',"
+                    + "'" + novoLogin.getSenha() + "'"
                 + ");");
                 if(status == 1){
-                    JOptionPane.showMessageDialog(null, "Cliente cadastrado com sucesso");
+                    JOptionPane.showMessageDialog(null, "Usuário cadastrado com sucesso");
                     apagaCadastro();
                     TelaDeLogin minhaTela = new TelaDeLogin();
                     minhaTela.setVisible(true);
@@ -247,7 +226,6 @@ public class TelaDeCadastro extends javax.swing.JFrame {
     public void apagaCadastro(){
         txtNome.setText("");
         txtSenha.setText("");
-        txtCpf.setText("");
     }
     
     public static void main(String args[]) {
@@ -268,13 +246,11 @@ public class TelaDeCadastro extends javax.swing.JFrame {
     private javax.swing.JLabel butMenuLog;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
-    private javax.swing.JFormattedTextField txtCpf;
     private javax.swing.JTextField txtNome;
     private javax.swing.JPasswordField txtSenha;
     // End of variables declaration//GEN-END:variables

@@ -1,11 +1,11 @@
 package Telas;
-import Classes.Funcionario;
+import Classes.Login;
 import Conexoes.MySQL;
 import javax.swing.JOptionPane;
 
 public class TelaDeConfig extends javax.swing.JFrame {
     MySQL mySQLcon;
-    Funcionario novoFuncionario;
+    Login novoLogin;
     public TelaDeConfig() {
         initComponents();
         mySQLcon = new MySQL();
@@ -22,8 +22,6 @@ public class TelaDeConfig extends javax.swing.JFrame {
         txtSenha = new javax.swing.JPasswordField();
         jLabel1 = new javax.swing.JLabel();
         butCadastrar = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        txtCpf = new javax.swing.JFormattedTextField();
         Mostrar2 = new javax.swing.JLabel();
         Esconder = new javax.swing.JLabel();
         Mostrar = new javax.swing.JLabel();
@@ -31,8 +29,6 @@ public class TelaDeConfig extends javax.swing.JFrame {
         jLabel8 = new javax.swing.JLabel();
         txtSenha1 = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
-        txtCpf1 = new javax.swing.JFormattedTextField();
         txtNome1 = new javax.swing.JTextField();
         jPanel5 = new javax.swing.JPanel();
         butBuscar = new javax.swing.JLabel();
@@ -50,6 +46,7 @@ public class TelaDeConfig extends javax.swing.JFrame {
         butConfig = new javax.swing.JLabel();
         butFechar = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
+        butFuncionario = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -106,21 +103,6 @@ public class TelaDeConfig extends javax.swing.JFrame {
         });
         jPanel1.add(butCadastrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 230, 240, 90));
 
-        jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(0, 0, 51));
-        jLabel4.setText("CPF.");
-        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 20, 150, 70));
-
-        txtCpf.setForeground(new java.awt.Color(0, 0, 51));
-        try {
-            txtCpf.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("###.###.###-##")));
-        } catch (java.text.ParseException ex) {
-            ex.printStackTrace();
-        }
-        txtCpf.setHorizontalAlignment(javax.swing.JTextField.LEFT);
-        txtCpf.setFont(new java.awt.Font("Segoe UI", 1, 32)); // NOI18N
-        jPanel1.add(txtCpf, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 90, 250, 70));
-
         Mostrar2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/icons8-usuário-60.png"))); // NOI18N
         jPanel1.add(Mostrar2, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 90, 70, 70));
 
@@ -147,35 +129,20 @@ public class TelaDeConfig extends javax.swing.JFrame {
         jLabel8.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(0, 0, 51));
         jLabel8.setText("Usuário.");
-        jPanel4.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 170, 150, 70));
+        jPanel4.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 40, 150, 70));
 
         txtSenha1.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         txtSenha1.setForeground(new java.awt.Color(0, 0, 51));
-        jPanel4.add(txtSenha1, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 240, 200, 50));
+        jPanel4.add(txtSenha1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 260, 200, 50));
 
         jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(0, 0, 51));
         jLabel3.setText("Senha.");
-        jPanel4.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 170, 150, 70));
-
-        jLabel5.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(0, 0, 51));
-        jLabel5.setText("CPF.");
-        jPanel4.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 150, 70));
-
-        txtCpf1.setForeground(new java.awt.Color(0, 0, 51));
-        try {
-            txtCpf1.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("###.###.###-##")));
-        } catch (java.text.ParseException ex) {
-            ex.printStackTrace();
-        }
-        txtCpf1.setHorizontalAlignment(javax.swing.JTextField.LEFT);
-        txtCpf1.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        jPanel4.add(txtCpf1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 90, 200, 50));
+        jPanel4.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 200, 150, 70));
 
         txtNome1.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         txtNome1.setForeground(new java.awt.Color(0, 0, 51));
-        jPanel4.add(txtNome1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 240, 200, 50));
+        jPanel4.add(txtNome1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 100, 200, 50));
 
         butBuscar.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         butBuscar.setForeground(new java.awt.Color(0, 0, 51));
@@ -220,7 +187,7 @@ public class TelaDeConfig extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        jPanel4.add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 20, 160, 160));
+        jPanel4.add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 200, 160, 160));
 
         butAtualizar.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         butAtualizar.setForeground(new java.awt.Color(0, 0, 51));
@@ -268,10 +235,10 @@ public class TelaDeConfig extends javax.swing.JFrame {
         jPanel4.add(jPanel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 200, 160, 160));
 
         jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/icons8-person-100.png"))); // NOI18N
-        jPanel4.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 50, -1, 120));
+        jPanel4.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 30, -1, 120));
 
         jLabel10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/icons8-summary-list-100.png"))); // NOI18N
-        jPanel4.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 50, -1, 120));
+        jPanel4.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 30, -1, 120));
 
         jTabbedPane1.addTab("Busca", jPanel4);
 
@@ -299,7 +266,7 @@ public class TelaDeConfig extends javax.swing.JFrame {
 
         jLabel6.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(0, 0, 51));
-        jLabel6.setText("Funcionário.");
+        jLabel6.setText("Usuário.");
         getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 20, 220, 70));
 
         butIncio.setFont(new java.awt.Font("Segoe UI", 1, 22)); // NOI18N
@@ -311,7 +278,7 @@ public class TelaDeConfig extends javax.swing.JFrame {
                 butIncioMouseClicked(evt);
             }
         });
-        getContentPane().add(butIncio, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 200, 170, 70));
+        getContentPane().add(butIncio, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 210, 170, 70));
 
         butProduto.setFont(new java.awt.Font("Segoe UI", 1, 22)); // NOI18N
         butProduto.setForeground(new java.awt.Color(0, 0, 51));
@@ -322,7 +289,7 @@ public class TelaDeConfig extends javax.swing.JFrame {
                 butProdutoMouseClicked(evt);
             }
         });
-        getContentPane().add(butProduto, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 300, 160, 70));
+        getContentPane().add(butProduto, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 290, 160, 70));
 
         butConfig.setFont(new java.awt.Font("Segoe UI", 1, 22)); // NOI18N
         butConfig.setForeground(new java.awt.Color(0, 0, 51));
@@ -333,7 +300,7 @@ public class TelaDeConfig extends javax.swing.JFrame {
                 butConfigMouseClicked(evt);
             }
         });
-        getContentPane().add(butConfig, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 370, 150, 100));
+        getContentPane().add(butConfig, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 440, 150, 100));
 
         butFechar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/icons8-fechar-janela-48.png"))); // NOI18N
         butFechar.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -344,7 +311,18 @@ public class TelaDeConfig extends javax.swing.JFrame {
         getContentPane().add(butFechar, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 20, 50, 50));
 
         jLabel11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/marca dagua (1).png"))); // NOI18N
-        getContentPane().add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 0, 200, -1));
+        getContentPane().add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 10, 200, -1));
+
+        butFuncionario.setFont(new java.awt.Font("Segoe UI", 1, 15)); // NOI18N
+        butFuncionario.setForeground(new java.awt.Color(0, 0, 51));
+        butFuncionario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/icons8-add-user-male-30.png"))); // NOI18N
+        butFuncionario.setText("Funcionário");
+        butFuncionario.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                butFuncionarioMouseClicked(evt);
+            }
+        });
+        getContentPane().add(butFuncionario, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 370, 170, 70));
 
         pack();
         setLocationRelativeTo(null);
@@ -376,23 +354,20 @@ public class TelaDeConfig extends javax.swing.JFrame {
         int status=0;
         mySQLcon.conectaBanco();
 
-        novoFuncionario = new Funcionario();
-        novoFuncionario.setNome(txtNome.getText());
-        novoFuncionario.setSenha(txtSenha.getText());
-        novoFuncionario.setCpf(txtCpf.getText());
+        novoLogin = new Login();
+        novoLogin.setUsuario(txtNome.getText());
+        novoLogin.setSenha(txtSenha.getText());
 
         try {
-            status = this.mySQLcon.insertSQL("INSERT INTO cadastroclientes ("
-                + "nome,"
-                + "senha,"
-                + "cpf"
+            status = this.mySQLcon.insertSQL("INSERT INTO login ("
+                + "usuario,"
+                + "senha"
                 + ") VALUES ("
-                + "'" + novoFuncionario.getNome() + "',"
-                + "'" + novoFuncionario.getSenha() + "',"
-                + "'" + novoFuncionario.getCpf() + "'"
+                + "'" + novoLogin.getUsuario()+ "',"
+                + "'" + novoLogin.getSenha() + "'"
                 + ");");
             if(status == 1){
-                JOptionPane.showMessageDialog(null, "Cliente cadastrado com sucesso");
+                JOptionPane.showMessageDialog(null, "Usuário cadastrado com sucesso");
                 apagaCadastro();
             }else{JOptionPane.showMessageDialog(null, "Houve algum problema de cadastro");
             }
@@ -424,15 +399,14 @@ public class TelaDeConfig extends javax.swing.JFrame {
         mySQLcon.conectaBanco();
         boolean status = false;
 
-         String CPF = txtCpf1.getText();
+         String usuario = txtNome1.getText();
 
         try {status = this.mySQLcon.updateSQL(
-                "UPDATE cadastroclientes SET "
-                    + "nome = '" + txtNome1.getText() + "',"
-                    + "senha = '" + txtSenha1.getText() + "',"
-                    + "cpf = '" + txtCpf1.getText() + "'"
+                "UPDATE login SET "
+                    + "usuario = '" + txtNome1.getText() + "',"
+                    + "senha = '" + txtSenha1.getText() + "'"
                 + " WHERE "
-                    + "cpf = '" + CPF + "'"
+                    + "usuario = '" + usuario + "'"
                 + ";"
             );
         if(status){JOptionPane.showMessageDialog(null, "Atualização realizada com sucesso");
@@ -447,31 +421,29 @@ public class TelaDeConfig extends javax.swing.JFrame {
 
     private void butBuscarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_butBuscarMouseClicked
         mySQLcon.conectaBanco();
-        novoFuncionario= new Funcionario();
+        novoLogin= new Login();
 
-        String CPF = txtCpf1.getText();
+        String usuario = txtNome1.getText();
         try {this.mySQLcon.executarSQL(
                    "SELECT "
-                    + "nome,"
-                    + "senha,"
-                    + "cpf"
+                    + "usuario,"
+                    + "senha"
                  + " FROM"
-                     + " cadastroclientes"
+                     + " login"
                  + " WHERE"
-                     + " cpf = '" + CPF + "'"
+                     + " usuario = '" + usuario + "'"
                 + ";"
             );
         while(mySQLcon.getResultSet().next()){
-            novoFuncionario.setNome(mySQLcon.getResultSet().getString(1));
-            novoFuncionario.setSenha(mySQLcon.getResultSet().getString(2));
-            novoFuncionario.setCpf(mySQLcon.getResultSet().getString(3));
+            novoLogin.setUsuario(mySQLcon.getResultSet().getString(1));
+            novoLogin.setSenha(mySQLcon.getResultSet().getString(2));
         }
-        if(novoFuncionario.getNome().equals("")){
+        if(novoLogin.getUsuario().equals("")){
             JOptionPane.showMessageDialog(null, "Houve algum problema ao consultar cadastro");
         }else{
-        txtNome1.setText(novoFuncionario.getNome());
-        txtSenha1.setText(novoFuncionario.getSenha());
-        txtCpf1.setText(novoFuncionario.getCpf());
+        JOptionPane.showMessageDialog(null, "Usuário encontrado");
+        txtNome1.setText(novoLogin.getUsuario());
+        txtSenha1.setText(novoLogin.getSenha());
         }
         } catch (Exception e) { 
           JOptionPane.showMessageDialog(null, "Houve algum problema com a conexão do servidor");
@@ -487,12 +459,12 @@ public class TelaDeConfig extends javax.swing.JFrame {
         mySQLcon.conectaBanco();
         boolean status = false;
 
-        String CPF = txtCpf1.getText();
+        String usuario = txtNome1.getText();
         try {
              status = this.mySQLcon.updateSQL(
-                "DELETE FROM cadastroclientes "
+                "DELETE FROM login "
                 + " WHERE "
-                    + "cpf = '" + CPF + "'"
+                    + "usuario = '" + usuario + "'"
                 + ";"
              );
              if(status){ JOptionPane.showMessageDialog(null, "Deletado com sucesso");
@@ -500,19 +472,21 @@ public class TelaDeConfig extends javax.swing.JFrame {
                 JOptionPane.showMessageDialog(null, "Houve um erro ao apagar");
             }
         } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, "Houve um erro ao apagar Cliente");
+            JOptionPane.showMessageDialog(null, "Houve um erro ao apagar usuário");
         } finally {mySQLcon.fechaBanco();
         }
     }//GEN-LAST:event_butExcluirMouseClicked
+
+    private void butFuncionarioMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_butFuncionarioMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_butFuncionarioMouseClicked
     public void apagaCadastro(){
         txtNome.setText("");
         txtSenha.setText("");
-        txtCpf.setText("");
     }
     public void apagaBusca(){
         txtNome1.setText("");
         txtSenha1.setText("");
-        txtCpf1.setText("");
     }
     public static void main(String args[]) {
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -532,6 +506,7 @@ public class TelaDeConfig extends javax.swing.JFrame {
     private javax.swing.JLabel butConfig;
     private javax.swing.JLabel butExcluir;
     private javax.swing.JLabel butFechar;
+    private javax.swing.JLabel butFuncionario;
     private javax.swing.JLabel butIncio;
     private javax.swing.JLabel butLimpar;
     private javax.swing.JLabel butProduto;
@@ -540,8 +515,6 @@ public class TelaDeConfig extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
@@ -553,8 +526,6 @@ public class TelaDeConfig extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel6;
     private javax.swing.JTabbedPane jTabbedPane1;
-    private javax.swing.JFormattedTextField txtCpf;
-    private javax.swing.JFormattedTextField txtCpf1;
     private javax.swing.JTextField txtNome;
     private javax.swing.JTextField txtNome1;
     private javax.swing.JPasswordField txtSenha;
