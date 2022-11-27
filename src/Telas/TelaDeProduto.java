@@ -6,10 +6,12 @@ import Classes.Produto;
 public class TelaDeProduto extends javax.swing.JFrame {
     MySQL mySQLcon;
     Produto novoProduto;
-    
+    String tipo = null;
     public TelaDeProduto() {
         initComponents();
         mySQLcon = new MySQL();
+        
+    
     }
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -19,47 +21,49 @@ public class TelaDeProduto extends javax.swing.JFrame {
         jTabbedPane1 = new javax.swing.JTabbedPane();
         jPanel1 = new javax.swing.JPanel();
         butCadastrar = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
-        txtTamanho = new javax.swing.JTextField();
-        jLabel11 = new javax.swing.JLabel();
-        txtIcms = new javax.swing.JTextField();
-        jLabel12 = new javax.swing.JLabel();
-        txtFornecedor = new javax.swing.JTextField();
         jLabel13 = new javax.swing.JLabel();
         jLabel14 = new javax.swing.JLabel();
         jLabel15 = new javax.swing.JLabel();
-        txtProduto = new javax.swing.JTextField();
-        txtCusto = new javax.swing.JTextField();
-        txtValor = new javax.swing.JTextField();
-        jLabel16 = new javax.swing.JLabel();
+        txtEmbalagem = new javax.swing.JTextField();
         jScrollPane1 = new javax.swing.JScrollPane();
         txtDesc = new javax.swing.JTextPane();
-        jPanel4 = new javax.swing.JPanel();
-        jLabel17 = new javax.swing.JLabel();
-        txtProduto1 = new javax.swing.JTextField();
-        jLabel18 = new javax.swing.JLabel();
-        txtFornecedor1 = new javax.swing.JTextField();
-        jLabel19 = new javax.swing.JLabel();
-        txtTamanho1 = new javax.swing.JTextField();
-        txtCusto1 = new javax.swing.JTextField();
-        txtValor1 = new javax.swing.JTextField();
-        txtIcms1 = new javax.swing.JTextField();
+        CmbProdutos = new javax.swing.JComboBox<>();
+        jLabel16 = new javax.swing.JLabel();
+        CmbTipos = new javax.swing.JComboBox<>();
+        jLabel23 = new javax.swing.JLabel();
+        txtValor = new javax.swing.JTextField();
         jLabel20 = new javax.swing.JLabel();
-        butAtualizar = new javax.swing.JLabel();
+        txtTamanho = new javax.swing.JTextField();
         jLabel21 = new javax.swing.JLabel();
-        jLabel22 = new javax.swing.JLabel();
+        txtMarca = new javax.swing.JTextField();
+        jPanel4 = new javax.swing.JPanel();
+        butAtualizar = new javax.swing.JLabel();
         butExcluir = new javax.swing.JLabel();
         butBuscar = new javax.swing.JLabel();
         butLimpar = new javax.swing.JLabel();
+        jLabel22 = new javax.swing.JLabel();
+        CmbTipos1 = new javax.swing.JComboBox<>();
+        jLabel25 = new javax.swing.JLabel();
+        CmbProdutos1 = new javax.swing.JComboBox<>();
+        jLabel27 = new javax.swing.JLabel();
+        txtValor1 = new javax.swing.JTextField();
+        txtTamanho1 = new javax.swing.JTextField();
+        jLabel29 = new javax.swing.JLabel();
+        jLabel17 = new javax.swing.JLabel();
+        txtMarca1 = new javax.swing.JTextField();
+        jLabel24 = new javax.swing.JLabel();
+        txtEmbalagem1 = new javax.swing.JTextField();
+        jPanel5 = new javax.swing.JPanel();
+        jPanel6 = new javax.swing.JPanel();
         jPanel3 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         butFechar = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         butIncio = new javax.swing.JLabel();
-        butProduto = new javax.swing.JLabel();
         butFuncionario = new javax.swing.JLabel();
         butConfig = new javax.swing.JLabel();
+        butProduto = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -98,37 +102,10 @@ public class TelaDeProduto extends javax.swing.JFrame {
         });
         jPanel1.add(butCadastrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 280, 240, 90));
 
-        jLabel7.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        jLabel7.setForeground(new java.awt.Color(0, 0, 51));
-        jLabel7.setText("Fornecedor.");
-        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 20, 150, 70));
-
-        txtTamanho.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        txtTamanho.setForeground(new java.awt.Color(0, 0, 51));
-        jPanel1.add(txtTamanho, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 90, 200, 50));
-
-        jLabel11.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        jLabel11.setForeground(new java.awt.Color(0, 0, 51));
-        jLabel11.setText("Tamanho.");
-        jPanel1.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 20, 150, 70));
-
-        txtIcms.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        txtIcms.setForeground(new java.awt.Color(0, 0, 51));
-        jPanel1.add(txtIcms, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 210, 200, 50));
-
-        jLabel12.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        jLabel12.setForeground(new java.awt.Color(0, 0, 51));
-        jLabel12.setText("ICMS.");
-        jPanel1.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 140, 150, 70));
-
-        txtFornecedor.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        txtFornecedor.setForeground(new java.awt.Color(0, 0, 51));
-        jPanel1.add(txtFornecedor, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 90, 200, 50));
-
         jLabel13.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         jLabel13.setForeground(new java.awt.Color(0, 0, 51));
-        jLabel13.setText("Produto.");
-        jPanel1.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 150, 70));
+        jLabel13.setText("Tamanho.");
+        jPanel1.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 140, 150, 70));
 
         jLabel14.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         jLabel14.setForeground(new java.awt.Color(0, 0, 51));
@@ -137,77 +114,66 @@ public class TelaDeProduto extends javax.swing.JFrame {
 
         jLabel15.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         jLabel15.setForeground(new java.awt.Color(0, 0, 51));
-        jLabel15.setText("Valor.");
-        jPanel1.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 140, 150, 70));
+        jLabel15.setText("Marca.");
+        jPanel1.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 20, 150, 70));
 
-        txtProduto.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        txtProduto.setForeground(new java.awt.Color(0, 0, 51));
-        jPanel1.add(txtProduto, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 90, 200, 50));
-
-        txtCusto.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        txtCusto.setForeground(new java.awt.Color(0, 0, 51));
-        jPanel1.add(txtCusto, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 210, 200, 50));
-
-        txtValor.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        txtValor.setForeground(new java.awt.Color(0, 0, 51));
-        jPanel1.add(txtValor, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 210, 200, 50));
-
-        jLabel16.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        jLabel16.setForeground(new java.awt.Color(0, 0, 51));
-        jLabel16.setText("Custo.");
-        jPanel1.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 140, 150, 70));
+        txtEmbalagem.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        txtEmbalagem.setForeground(new java.awt.Color(0, 0, 51));
+        jPanel1.add(txtEmbalagem, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 210, 290, 50));
 
         jScrollPane1.setViewportView(txtDesc);
 
-        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 280, 270, 90));
+        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 280, 270, 90));
+
+        CmbProdutos.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        CmbProdutos.setForeground(new java.awt.Color(0, 0, 51));
+        jPanel1.add(CmbProdutos, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 90, 290, 50));
+
+        jLabel16.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        jLabel16.setForeground(new java.awt.Color(0, 0, 51));
+        jLabel16.setText("Produtos.");
+        jPanel1.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 20, 150, 70));
+
+        CmbTipos.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        CmbTipos.setForeground(new java.awt.Color(0, 0, 51));
+        CmbTipos.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Brinquedo", "Ração", "Acessórios" }));
+        CmbTipos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CmbTiposActionPerformed(evt);
+            }
+        });
+        jPanel1.add(CmbTipos, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 90, 180, 50));
+
+        jLabel23.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        jLabel23.setForeground(new java.awt.Color(0, 0, 51));
+        jLabel23.setText("Valor.");
+        jPanel1.add(jLabel23, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 140, 150, 70));
+
+        txtValor.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        txtValor.setForeground(new java.awt.Color(0, 0, 51));
+        jPanel1.add(txtValor, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 210, 180, 50));
+
+        jLabel20.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        jLabel20.setForeground(new java.awt.Color(0, 0, 51));
+        jLabel20.setText("Tipos.");
+        jPanel1.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 150, 70));
+
+        txtTamanho.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        txtTamanho.setForeground(new java.awt.Color(0, 0, 51));
+        jPanel1.add(txtTamanho, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 210, 180, 50));
+
+        jLabel21.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        jLabel21.setForeground(new java.awt.Color(0, 0, 51));
+        jLabel21.setText("Embalagem.");
+        jPanel1.add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 140, 150, 70));
+
+        txtMarca.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        txtMarca.setForeground(new java.awt.Color(0, 0, 51));
+        jPanel1.add(txtMarca, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 90, 180, 50));
 
         jTabbedPane1.addTab("Cadastro", jPanel1);
 
         jPanel4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jLabel17.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        jLabel17.setForeground(new java.awt.Color(0, 0, 51));
-        jLabel17.setText("Produto.");
-        jPanel4.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 150, 70));
-
-        txtProduto1.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        txtProduto1.setForeground(new java.awt.Color(0, 0, 51));
-        jPanel4.add(txtProduto1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 90, 200, 50));
-
-        jLabel18.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        jLabel18.setForeground(new java.awt.Color(0, 0, 51));
-        jLabel18.setText("Fornecedor.");
-        jPanel4.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 20, 150, 70));
-
-        txtFornecedor1.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        txtFornecedor1.setForeground(new java.awt.Color(0, 0, 51));
-        jPanel4.add(txtFornecedor1, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 90, 200, 50));
-
-        jLabel19.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        jLabel19.setForeground(new java.awt.Color(0, 0, 51));
-        jLabel19.setText("Tamanho.");
-        jPanel4.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 20, 150, 70));
-
-        txtTamanho1.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        txtTamanho1.setForeground(new java.awt.Color(0, 0, 51));
-        jPanel4.add(txtTamanho1, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 90, 200, 50));
-
-        txtCusto1.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        txtCusto1.setForeground(new java.awt.Color(0, 0, 51));
-        jPanel4.add(txtCusto1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 210, 200, 50));
-
-        txtValor1.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        txtValor1.setForeground(new java.awt.Color(0, 0, 51));
-        jPanel4.add(txtValor1, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 210, 200, 50));
-
-        txtIcms1.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        txtIcms1.setForeground(new java.awt.Color(0, 0, 51));
-        jPanel4.add(txtIcms1, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 210, 200, 50));
-
-        jLabel20.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        jLabel20.setForeground(new java.awt.Color(0, 0, 51));
-        jLabel20.setText("ICMS.");
-        jPanel4.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 140, 150, 70));
 
         butAtualizar.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         butAtualizar.setForeground(new java.awt.Color(0, 0, 51));
@@ -220,16 +186,6 @@ public class TelaDeProduto extends javax.swing.JFrame {
             }
         });
         jPanel4.add(butAtualizar, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 310, 125, 40));
-
-        jLabel21.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        jLabel21.setForeground(new java.awt.Color(0, 0, 51));
-        jLabel21.setText("Valor.");
-        jPanel4.add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 140, 150, 70));
-
-        jLabel22.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        jLabel22.setForeground(new java.awt.Color(0, 0, 51));
-        jLabel22.setText("Custo.");
-        jPanel4.add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 140, 150, 70));
 
         butExcluir.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         butExcluir.setForeground(new java.awt.Color(0, 0, 51));
@@ -267,7 +223,93 @@ public class TelaDeProduto extends javax.swing.JFrame {
         });
         jPanel4.add(butLimpar, new org.netbeans.lib.awtextra.AbsoluteConstraints(195, 310, 125, 40));
 
+        jLabel22.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        jLabel22.setForeground(new java.awt.Color(0, 0, 51));
+        jLabel22.setText("Tipos.");
+        jPanel4.add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 150, 70));
+
+        CmbTipos1.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        CmbTipos1.setForeground(new java.awt.Color(0, 0, 51));
+        CmbTipos1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Brinquedo", "Ração", "Acessórios" }));
+        CmbTipos1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CmbTipos1ActionPerformed(evt);
+            }
+        });
+        jPanel4.add(CmbTipos1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 90, 180, 50));
+
+        jLabel25.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        jLabel25.setForeground(new java.awt.Color(0, 0, 51));
+        jLabel25.setText("Produtos.");
+        jPanel4.add(jLabel25, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 20, 150, 70));
+
+        CmbProdutos1.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        CmbProdutos1.setForeground(new java.awt.Color(0, 0, 51));
+        jPanel4.add(CmbProdutos1, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 90, 290, 50));
+
+        jLabel27.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        jLabel27.setForeground(new java.awt.Color(0, 0, 51));
+        jLabel27.setText("Valor.");
+        jPanel4.add(jLabel27, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 140, 150, 70));
+
+        txtValor1.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        txtValor1.setForeground(new java.awt.Color(0, 0, 51));
+        jPanel4.add(txtValor1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 210, 180, 50));
+
+        txtTamanho1.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        txtTamanho1.setForeground(new java.awt.Color(0, 0, 51));
+        jPanel4.add(txtTamanho1, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 210, 180, 50));
+
+        jLabel29.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        jLabel29.setForeground(new java.awt.Color(0, 0, 51));
+        jLabel29.setText("Tamanho.");
+        jPanel4.add(jLabel29, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 140, 150, 70));
+
+        jLabel17.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        jLabel17.setForeground(new java.awt.Color(0, 0, 51));
+        jLabel17.setText("Marca.");
+        jPanel4.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 20, 150, 70));
+
+        txtMarca1.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        txtMarca1.setForeground(new java.awt.Color(0, 0, 51));
+        jPanel4.add(txtMarca1, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 90, 180, 50));
+
+        jLabel24.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        jLabel24.setForeground(new java.awt.Color(0, 0, 51));
+        jLabel24.setText("Embalagem.");
+        jPanel4.add(jLabel24, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 140, 150, 70));
+
+        txtEmbalagem1.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        txtEmbalagem1.setForeground(new java.awt.Color(0, 0, 51));
+        jPanel4.add(txtEmbalagem1, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 210, 290, 50));
+
         jTabbedPane1.addTab("Busca", jPanel4);
+
+        javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
+        jPanel5.setLayout(jPanel5Layout);
+        jPanel5Layout.setHorizontalGroup(
+            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 710, Short.MAX_VALUE)
+        );
+        jPanel5Layout.setVerticalGroup(
+            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 393, Short.MAX_VALUE)
+        );
+
+        jTabbedPane1.addTab("tab3", jPanel5);
+
+        javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
+        jPanel6.setLayout(jPanel6Layout);
+        jPanel6Layout.setHorizontalGroup(
+            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 710, Short.MAX_VALUE)
+        );
+        jPanel6Layout.setVerticalGroup(
+            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 393, Short.MAX_VALUE)
+        );
+
+        jTabbedPane1.addTab("tab4", jPanel6);
 
         getContentPane().add(jTabbedPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 100, 710, 450));
 
@@ -293,7 +335,7 @@ public class TelaDeProduto extends javax.swing.JFrame {
 
         jLabel6.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(0, 0, 51));
-        jLabel6.setText("Produto.");
+        jLabel6.setText("Funções.");
         getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 20, 170, 70));
 
         butFechar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/icons8-fechar-janela-48.png"))); // NOI18N
@@ -318,17 +360,6 @@ public class TelaDeProduto extends javax.swing.JFrame {
         });
         getContentPane().add(butIncio, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 210, 170, 70));
 
-        butProduto.setFont(new java.awt.Font("Segoe UI", 1, 22)); // NOI18N
-        butProduto.setForeground(new java.awt.Color(0, 0, 51));
-        butProduto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/icons8-product-30.png"))); // NOI18N
-        butProduto.setText("Produto.");
-        butProduto.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                butProdutoMouseClicked(evt);
-            }
-        });
-        getContentPane().add(butProduto, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 290, 160, 70));
-
         butFuncionario.setFont(new java.awt.Font("Segoe UI", 1, 15)); // NOI18N
         butFuncionario.setForeground(new java.awt.Color(0, 0, 51));
         butFuncionario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/icons8-add-user-male-30.png"))); // NOI18N
@@ -351,6 +382,17 @@ public class TelaDeProduto extends javax.swing.JFrame {
         });
         getContentPane().add(butConfig, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 440, 150, 100));
 
+        butProduto.setFont(new java.awt.Font("Segoe UI", 1, 22)); // NOI18N
+        butProduto.setForeground(new java.awt.Color(0, 0, 51));
+        butProduto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/icons8-pets-30.png"))); // NOI18N
+        butProduto.setText("Funções");
+        butProduto.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                butProdutoMouseClicked(evt);
+            }
+        });
+        getContentPane().add(butProduto, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 290, 160, 70));
+
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
@@ -363,46 +405,49 @@ public class TelaDeProduto extends javax.swing.JFrame {
         mySQLcon.conectaBanco();
         novoProduto= new Produto();
 
-        String produto = txtProduto1.getText();
-        String fornecedor = txtFornecedor1.getText();
+        String tipos = (String)CmbTipos1.getSelectedItem();
+        String produtos = (String)CmbProdutos1.getSelectedItem();
+        String marca = txtMarca1.getText();
+               
         try {this.mySQLcon.executarSQL(
-                   "SELECT "
-                    + "produto,"
-                    + "fornecedor,"
-                    + "tamanho,"
-                    + "descricao,"
-                    + "custo,"
-                    + "venda,"
-                    + "icms"
-                 + " FROM"
-                     + " cadastroproduto"
-                 + " WHERE"
-                     + " produto = '" + produto + "'"
-                 + " AND"
-                     + " fornecedor = '" + fornecedor + "'"
-                + ";"
-            );
+            "SELECT "
+            + "tipo,"
+            + "produtos,"
+            + "valor,"
+            + "marca,"
+            + "tamanho,"
+            + "embalagem"
+            + " FROM"
+            + " produto"
+            + " WHERE "
+            + "tipo = '" + tipos + "'"
+            + " AND "
+            + "produtos = '" + produtos + "'"
+            + " AND "
+            + "marca = '" + marca + "'"
+            + ";"
+        );
         while(mySQLcon.getResultSet().next()){
-            novoProduto.setProduto(mySQLcon.getResultSet().getString(1));
-            novoProduto.setFornecedor(mySQLcon.getResultSet().getString(2));
-            novoProduto.setTamanho(mySQLcon.getResultSet().getInt(3));
-            novoProduto.setCusto(mySQLcon.getResultSet().getInt(5));
-            novoProduto.setVenda(mySQLcon.getResultSet().getInt(6));
-            novoProduto.setICMS(mySQLcon.getResultSet().getInt(7));
+            novoProduto.setTipo(mySQLcon.getResultSet().getString(1));
+            novoProduto.setProdutos(mySQLcon.getResultSet().getString(2));
+            novoProduto.setValor(mySQLcon.getResultSet().getInt(3));
+            novoProduto.setMarca(mySQLcon.getResultSet().getString(4));
+            novoProduto.setTamanho(mySQLcon.getResultSet().getInt(5));
+            novoProduto.setEmbalagem(mySQLcon.getResultSet().getString(6));
         }
-        if(novoProduto.getProduto().equals("")){
-            JOptionPane.showMessageDialog(null, "Houve algum problema ao consultar cadastro");
+        if(novoProduto.getMarca().equals("")){
+            JOptionPane.showMessageDialog(null, "Houve algum problema ao consultar produto");
         }else{
-        txtProduto1.setText(novoProduto.getProduto());
-        txtFornecedor1.setText(novoProduto.getFornecedor());
-        txtTamanho1.setText(String.valueOf(novoProduto.getTamanho()));
-        txtCusto1.setText(String.valueOf(novoProduto.getCusto()));
-        txtValor1.setText(String.valueOf(novoProduto.getVenda()));
-        txtIcms1.setText(String.valueOf(novoProduto.getICMS()));
-        
+            JOptionPane.showMessageDialog(null, "Produto localizado com sucesso");
+            CmbTipos1.setSelectedItem(novoProduto.getTipo());
+            CmbProdutos1.setSelectedItem(novoProduto.getProdutos());
+            txtMarca1.setText(novoProduto.getMarca());
+            txtValor1.setText(String.valueOf(novoProduto.getValor()));
+            txtTamanho1.setText(String.valueOf(novoProduto.getTamanho()));
+            txtEmbalagem1.setText(novoProduto.getEmbalagem());
         }
-        } catch (Exception e) { 
-          JOptionPane.showMessageDialog(null, "Houve algum problema com a conexão do servidor");
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "Houve algum problema com a conexão do servidor");
         } finally {  mySQLcon.fechaBanco();
         }
     }//GEN-LAST:event_butBuscarMouseClicked
@@ -415,23 +460,28 @@ public class TelaDeProduto extends javax.swing.JFrame {
         mySQLcon.conectaBanco();
         boolean status = false;
 
-        String produto = txtProduto1.getText();
-        String fornecedor = txtFornecedor1.getText();
+        String tipos = (String)CmbTipos1.getSelectedItem();
+        String produtos = (String)CmbProdutos1.getSelectedItem();
+        String marca = txtMarca1.getText();
+        
+        
         try {status = this.mySQLcon.updateSQL(
-                "UPDATE cadastroproduto SET "
-                    + "produto = '" + txtProduto1.getText() + "',"
-                    + "fornecedor = '" + txtFornecedor1.getText() + "',"
-                    + "tamanho = '" + txtTamanho1.getText() + "',"
-                    + "custo = '" + txtCusto1.getText() + "',"
-                    + "venda = '" + txtValor1.getText() + "',"
-                    + "icms = '" + txtIcms1.getText() + "'"
-                + " WHERE "
-                    + "produto = '" + produto + "'"
-                + " AND"
-                     + " fornecedor = '" + fornecedor + "'"
-                + ";"
-            );
-        if(status){JOptionPane.showMessageDialog(null, "Atualização realizada com sucesso");
+            "UPDATE produto SET "
+            + "tipo = '" + CmbTipos1.getSelectedItem() + "',"
+            + "produtos = '" + CmbProdutos1.getSelectedItem() + "',"
+            + "valor = '" + txtValor1.getText() + "',"
+            + "marca = '" + txtMarca1.getText() + "',"
+            + "tamanho = '" + txtTamanho1.getText() + "',"
+            + "embalagem = '" + txtEmbalagem1.getText() + "'"
+            + " WHERE "
+            + "tipo = '" + tipos + "'"
+            + " AND "
+            + "produtos = '" + produtos + "'"
+            + " AND "
+            + "marca = '" + marca + "'"
+            + ";"
+        );
+        if(status){JOptionPane.showMessageDialog(null, "Atualização realizada com sucesso"); apagaBusca();
         }else{ JOptionPane.showMessageDialog(null, "Houve um erro na atualização, tente novamente");
         }
         } catch (Exception e) {
@@ -445,57 +495,86 @@ public class TelaDeProduto extends javax.swing.JFrame {
         mySQLcon.conectaBanco();
         boolean status = false;
 
-        String produto = txtProduto1.getText();
-        String fornecedor = txtFornecedor1.getText();
-        
+        String tipos = (String)CmbTipos1.getSelectedItem();
+        String produtos = (String)CmbProdutos1.getSelectedItem();
+        String marca = txtMarca1.getText();
+
         try {
-             status = this.mySQLcon.updateSQL(
-                "DELETE FROM cadastroproduto "
+            status = this.mySQLcon.updateSQL(
+                "DELETE FROM produto "
                 + " WHERE "
-                    + "produto = '" + produto + "'"
-                + " AND"
-                     + " fornecedor = '" + fornecedor + "'"
-                + ";"
-             );
-             if(status){ JOptionPane.showMessageDialog(null, "Deletado com sucesso");
-             }else{
+            + "tipo = '" + tipos + "'"
+            + " AND "
+            + "produtos = '" + produtos + "'"
+            + " AND "
+            + "marca = '" + marca + "'"
+            + ";"
+            );
+            if(status){ JOptionPane.showMessageDialog(null, "Deletado com sucesso"); apagaBusca();
+            }else{
                 JOptionPane.showMessageDialog(null, "Houve um erro ao apagar");
             }
         } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, "Houve um erro ao apagar Cliente");
+            JOptionPane.showMessageDialog(null, "Houve um erro ao apagar Produto");
         } finally {mySQLcon.fechaBanco();
         }
     }//GEN-LAST:event_butExcluirMouseClicked
+
+    private void butIncioMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_butIncioMouseClicked
+        TelaDeInicio minhaTela = new TelaDeInicio();
+        minhaTela.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_butIncioMouseClicked
+
+    private void butFuncionarioMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_butFuncionarioMouseClicked
+        TelaDeFuncionario minhaTela = new TelaDeFuncionario();
+        minhaTela.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_butFuncionarioMouseClicked
+
+    private void butConfigMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_butConfigMouseClicked
+        TelaDeConfig minhaTela = new TelaDeConfig();
+        minhaTela.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_butConfigMouseClicked
+
+    private void butProdutoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_butProdutoMouseClicked
+        TelaDeProduto minhaTela = new TelaDeProduto();
+        minhaTela.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_butProdutoMouseClicked
 
     private void butCadastrarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_butCadastrarMouseClicked
         int status=0;
         mySQLcon.conectaBanco();
 
         novoProduto = new Produto();
-        novoProduto.setProduto(txtProduto.getText());
-        novoProduto.setFornecedor(txtFornecedor.getText());
-        novoProduto.setTamanho(Integer.parseInt(txtTamanho.getText()));
+        
+        novoProduto.setProdutos((String)CmbProdutos.getSelectedItem());
+        novoProduto.setTipo((String)CmbTipos.getSelectedItem());
+        novoProduto.setValor(Integer.parseInt(txtValor.getText()));
+        novoProduto.setMarca(txtMarca.getText());
         novoProduto.setDescricao(txtDesc.getText());
-        novoProduto.setCusto(Integer.parseInt(txtCusto.getText()));
-        novoProduto.setVenda(Integer.parseInt(txtValor.getText()));
-        novoProduto.setICMS(Integer.parseInt(txtIcms.getText()));
+        novoProduto.setTamanho(Integer.parseInt(txtTamanho.getText()));
+        novoProduto.setEmbalagem(txtEmbalagem.getText());
+        
         try {
-            status = this.mySQLcon.insertSQL("INSERT INTO cadastroproduto ("
-                + "produto,"
-                + "fornecedor,"
-                + "tamanho,"
+            status = this.mySQLcon.insertSQL("INSERT INTO produto ("
+                + "tipo,"
+                + "produtos,"
+                + "valor,"
+                + "marca,"
                 + "descricao,"
-                + "custo,"
-                + "venda,"
-                + "icms"
+                + "tamanho,"
+                + "embalagem"
                 + ") VALUES ("
-                + "'" + novoProduto.getProduto() + "',"
-                + "'" + novoProduto.getFornecedor() + "',"
-                + "'" + novoProduto.getTamanho() + "',"
-                + "'" + novoProduto.getDescricao() + "',"
-                + "'" + novoProduto.getCusto() + "',"
-                + "'" + novoProduto.getVenda() + "',"
-                + "'" + novoProduto.getICMS() + "'"
+                + "'" + novoProduto.getTipo()+ "',"
+                + "'" + novoProduto.getProdutos()+ "',"
+                + "'" + novoProduto.getValor()+ "',"
+                + "'" + novoProduto.getMarca()+ "',"
+                + "'" + novoProduto.getDescricao()+ "',"
+                + "'" + novoProduto.getTamanho()+ "',"
+                + "'" + novoProduto.getEmbalagem()+ "'"
                 + ");");
             if(status == 1){
                 JOptionPane.showMessageDialog(null, "Produto cadastrado com sucesso");
@@ -508,46 +587,165 @@ public class TelaDeProduto extends javax.swing.JFrame {
         finally {
         }
         mySQLcon.fechaBanco();
-
     }//GEN-LAST:event_butCadastrarMouseClicked
 
-    private void butIncioMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_butIncioMouseClicked
-        TelaDeInicio minhaTela = new TelaDeInicio();
-        minhaTela.setVisible(true);
-        dispose();
-    }//GEN-LAST:event_butIncioMouseClicked
+    private void CmbTiposActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CmbTiposActionPerformed
+        tipo = (String)CmbTipos.getSelectedItem();
+        switch(tipo){
+            case "Brinquedo":
+                CmbProdutos.removeAllItems();
+        this.mySQLcon.conectaBanco();
+    try{
+        this.mySQLcon.executarSQL(
+            "SELECT "
+                +"nome"
+            +" FROM "
+                +"brinquedo"
+        );
+        while(this.mySQLcon.getResultSet().next()){   
+            CmbProdutos.addItem(this.mySQLcon.getResultSet().getString(1));
+        }
+            
+            }catch (Exception e){
+                System.out.println("Erro ao consultar Tipo "+ e.getMessage());
+                JOptionPane.showMessageDialog(null, "Erro ao buscar Tipo!");
+            }finally{
+            
+            this.mySQLcon.fechaBanco();
+    }break;
+    
+            case "Acessórios":
+                CmbProdutos.removeAllItems();
+        this.mySQLcon.conectaBanco();
+    try{
+        this.mySQLcon.executarSQL(
+            "SELECT "
+                +"nome"
+            +" FROM "
+                +"acessorios"
+        );
+        while(this.mySQLcon.getResultSet().next()){   
+            CmbProdutos.addItem(this.mySQLcon.getResultSet().getString(1));
+        }
+            
+            }catch (Exception e){
+                System.out.println("Erro ao consultar Tipo "+ e.getMessage());
+                JOptionPane.showMessageDialog(null, "Erro ao buscar Tipo!");
+            }finally{
+            
+            this.mySQLcon.fechaBanco();
+    }break;
+    
+            case "Ração":
+                CmbProdutos.removeAllItems();
+        this.mySQLcon.conectaBanco();
+    try{
+        this.mySQLcon.executarSQL(
+            "SELECT "
+                +"nome"
+            +" FROM "
+                +"racao"
+        );
+        while(this.mySQLcon.getResultSet().next()){   
+            CmbProdutos.addItem(this.mySQLcon.getResultSet().getString(1));
+        }
+            
+            }catch (Exception e){
+                System.out.println("Erro ao consultar Tipo "+ e.getMessage());
+                JOptionPane.showMessageDialog(null, "Erro ao buscar Tipo!");
+            }finally{
+            
+            this.mySQLcon.fechaBanco();
+    }break;
+        }
+    }//GEN-LAST:event_CmbTiposActionPerformed
 
-    private void butProdutoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_butProdutoMouseClicked
-        TelaDeProduto minhaTela = new TelaDeProduto();
-        minhaTela.setVisible(true);
-        dispose();
-    }//GEN-LAST:event_butProdutoMouseClicked
-
-    private void butFuncionarioMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_butFuncionarioMouseClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_butFuncionarioMouseClicked
-
-    private void butConfigMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_butConfigMouseClicked
-        TelaDeConfig minhaTela = new TelaDeConfig();
-        minhaTela.setVisible(true);
-        dispose();
-    }//GEN-LAST:event_butConfigMouseClicked
+    private void CmbTipos1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CmbTipos1ActionPerformed
+        tipo = (String)CmbTipos1.getSelectedItem();
+        switch(tipo){
+            case "Brinquedo":
+                CmbProdutos1.removeAllItems();
+        this.mySQLcon.conectaBanco();
+    try{
+        this.mySQLcon.executarSQL(
+            "SELECT "
+                +"nome"
+            +" FROM "
+                +"brinquedo"
+        );
+        while(this.mySQLcon.getResultSet().next()){   
+            CmbProdutos1.addItem(this.mySQLcon.getResultSet().getString(1));
+        }
+            
+            }catch (Exception e){
+                System.out.println("Erro ao consultar Tipo "+ e.getMessage());
+                JOptionPane.showMessageDialog(null, "Erro ao buscar Tipo!");
+            }finally{
+            
+            this.mySQLcon.fechaBanco();
+    }break;
+    
+            case "Acessórios":
+                CmbProdutos1.removeAllItems();
+        this.mySQLcon.conectaBanco();
+    try{
+        this.mySQLcon.executarSQL(
+            "SELECT "
+                +"nome"
+            +" FROM "
+                +"acessorios"
+        );
+        while(this.mySQLcon.getResultSet().next()){   
+            CmbProdutos1.addItem(this.mySQLcon.getResultSet().getString(1));
+        }
+            
+            }catch (Exception e){
+                System.out.println("Erro ao consultar Tipo "+ e.getMessage());
+                JOptionPane.showMessageDialog(null, "Erro ao buscar Tipo!");
+            }finally{
+            
+            this.mySQLcon.fechaBanco();
+    }break;
+    
+            case "Ração":
+                CmbProdutos1.removeAllItems();
+        this.mySQLcon.conectaBanco();
+    try{
+        this.mySQLcon.executarSQL(
+            "SELECT "
+                +"nome"
+            +" FROM "
+                +"racao"
+        );
+        while(this.mySQLcon.getResultSet().next()){   
+            CmbProdutos1.addItem(this.mySQLcon.getResultSet().getString(1));
+        }
+            
+            }catch (Exception e){
+                System.out.println("Erro ao consultar Tipo "+ e.getMessage());
+                JOptionPane.showMessageDialog(null, "Erro ao buscar Tipo!");
+            }finally{
+            
+            this.mySQLcon.fechaBanco();
+    }break;
+        }
+    }//GEN-LAST:event_CmbTipos1ActionPerformed
     public void apagaCadastro(){
-        txtProduto.setText("");
-        txtTamanho.setText("");
-        txtFornecedor.setText("");
-        txtCusto.setText("");
-        txtValor.setText("");
-        txtIcms.setText("");
+        CmbProdutos.setSelectedIndex(0);
+        CmbTipos.setSelectedIndex(0);
         txtDesc.setText("");
+        txtEmbalagem.setText("");
+        txtValor.setText("");
+        txtMarca.setText("");
+        txtTamanho.setText("");
     }
     public void apagaBusca(){
-        txtProduto1.setText("");
-        txtTamanho1.setText("");
-        txtFornecedor1.setText("");
-        txtCusto1.setText("");
+        CmbProdutos1.setSelectedIndex(0);
+        CmbTipos1.setSelectedIndex(0);
+        txtEmbalagem1.setText("");
         txtValor1.setText("");
-        txtIcms1.setText("");
+        txtMarca1.setText("");
+        txtTamanho1.setText("");
     }
     public static void main(String args[]) {
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -558,6 +756,10 @@ public class TelaDeProduto extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JComboBox<String> CmbProdutos;
+    private javax.swing.JComboBox<String> CmbProdutos1;
+    private javax.swing.JComboBox<String> CmbTipos;
+    private javax.swing.JComboBox<String> CmbTipos1;
     private javax.swing.JLabel butAtualizar;
     private javax.swing.JLabel butBuscar;
     private javax.swing.JLabel butCadastrar;
@@ -568,37 +770,35 @@ public class TelaDeProduto extends javax.swing.JFrame {
     private javax.swing.JLabel butIncio;
     private javax.swing.JLabel butLimpar;
     private javax.swing.JLabel butProduto;
-    private javax.swing.JLabel jLabel11;
-    private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
-    private javax.swing.JLabel jLabel18;
-    private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel22;
+    private javax.swing.JLabel jLabel23;
+    private javax.swing.JLabel jLabel24;
+    private javax.swing.JLabel jLabel25;
+    private javax.swing.JLabel jLabel27;
+    private javax.swing.JLabel jLabel29;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
+    private javax.swing.JPanel jPanel5;
+    private javax.swing.JPanel jPanel6;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTabbedPane jTabbedPane1;
-    private javax.swing.JTextField txtCusto;
-    private javax.swing.JTextField txtCusto1;
     private javax.swing.JTextPane txtDesc;
-    private javax.swing.JTextField txtFornecedor;
-    private javax.swing.JTextField txtFornecedor1;
-    private javax.swing.JTextField txtIcms;
-    private javax.swing.JTextField txtIcms1;
-    private javax.swing.JTextField txtProduto;
-    private javax.swing.JTextField txtProduto1;
+    private javax.swing.JTextField txtEmbalagem;
+    private javax.swing.JTextField txtEmbalagem1;
+    private javax.swing.JTextField txtMarca;
+    private javax.swing.JTextField txtMarca1;
     private javax.swing.JTextField txtTamanho;
     private javax.swing.JTextField txtTamanho1;
     private javax.swing.JTextField txtValor;

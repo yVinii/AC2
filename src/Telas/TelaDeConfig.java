@@ -42,11 +42,11 @@ public class TelaDeConfig extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         butIncio = new javax.swing.JLabel();
-        butProduto = new javax.swing.JLabel();
         butConfig = new javax.swing.JLabel();
         butFechar = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
         butFuncionario = new javax.swing.JLabel();
+        butProduto = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -280,17 +280,6 @@ public class TelaDeConfig extends javax.swing.JFrame {
         });
         getContentPane().add(butIncio, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 210, 170, 70));
 
-        butProduto.setFont(new java.awt.Font("Segoe UI", 1, 22)); // NOI18N
-        butProduto.setForeground(new java.awt.Color(0, 0, 51));
-        butProduto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/icons8-product-30.png"))); // NOI18N
-        butProduto.setText("Produto.");
-        butProduto.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                butProdutoMouseClicked(evt);
-            }
-        });
-        getContentPane().add(butProduto, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 290, 160, 70));
-
         butConfig.setFont(new java.awt.Font("Segoe UI", 1, 22)); // NOI18N
         butConfig.setForeground(new java.awt.Color(0, 0, 51));
         butConfig.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/icons8-services-40.png"))); // NOI18N
@@ -324,6 +313,17 @@ public class TelaDeConfig extends javax.swing.JFrame {
         });
         getContentPane().add(butFuncionario, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 370, 170, 70));
 
+        butProduto.setFont(new java.awt.Font("Segoe UI", 1, 22)); // NOI18N
+        butProduto.setForeground(new java.awt.Color(0, 0, 51));
+        butProduto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/icons8-pets-30.png"))); // NOI18N
+        butProduto.setText("Funções");
+        butProduto.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                butProdutoMouseClicked(evt);
+            }
+        });
+        getContentPane().add(butProduto, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 290, 160, 70));
+
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
@@ -333,12 +333,6 @@ public class TelaDeConfig extends javax.swing.JFrame {
         minhaTela.setVisible(true);
         dispose();
     }//GEN-LAST:event_butIncioMouseClicked
-
-    private void butProdutoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_butProdutoMouseClicked
-        TelaDeProduto minhaTela = new TelaDeProduto();
-        minhaTela.setVisible(true);
-        dispose();
-    }//GEN-LAST:event_butProdutoMouseClicked
 
     private void butConfigMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_butConfigMouseClicked
         TelaDeConfig minhaTela = new TelaDeConfig();
@@ -480,6 +474,12 @@ public class TelaDeConfig extends javax.swing.JFrame {
     private void butFuncionarioMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_butFuncionarioMouseClicked
         // TODO add your handling code here:
     }//GEN-LAST:event_butFuncionarioMouseClicked
+
+    private void butProdutoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_butProdutoMouseClicked
+        TelaDeProduto minhaTela = new TelaDeProduto();
+        minhaTela.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_butProdutoMouseClicked
     public void apagaCadastro(){
         txtNome.setText("");
         txtSenha.setText("");

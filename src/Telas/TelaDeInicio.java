@@ -140,8 +140,8 @@ public class TelaDeInicio extends javax.swing.JFrame {
 
         butProduto.setFont(new java.awt.Font("Segoe UI", 1, 22)); // NOI18N
         butProduto.setForeground(new java.awt.Color(0, 0, 51));
-        butProduto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/icons8-product-30.png"))); // NOI18N
-        butProduto.setText("Produto.");
+        butProduto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/icons8-pets-30.png"))); // NOI18N
+        butProduto.setText("Funções");
         butProduto.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 butProdutoMouseClicked(evt);

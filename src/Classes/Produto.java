@@ -1,75 +1,79 @@
 package Classes;
 public class Produto {
     // Atributos
-    private String produto = "";
-    private Integer tamanho = 0;
+    private String produtos = "";
+    private String tipo = "";
     private String descricao = "";
-    private String fornecedor = "";
-    private float custo = 0;
-    private float venda = 0;
-    private float icms = 0;
+    private String marca = "";
+    private float valor = 0;
+    private float tamanho = 0;
+    private String embalagem = "";
     //GET e SET
-    public String getProduto() {
-        return produto;
-    }
 
-    public void setProduto(String produto) {
-        this.produto = produto;
-    }
-
-    public Integer getTamanho() {
+    public float getTamanho() {
         return tamanho;
     }
 
-    public void setTamanho(Integer tamanho) {
+    public void setTamanho(float tamanho) {
         this.tamanho = tamanho;
+    }
+
+    public String getEmbalagem() {
+        return embalagem;
+    }
+
+    public void setEmbalagem(String embalagem) {
+        this.embalagem = embalagem;
+    }
+
+    public String getProdutos() {
+        return produtos;
+    }
+
+    public void setProdutos(String produtos) {
+        this.produtos = produtos;
+    }
+
+    public String getTipo() {
+        return tipo;
+    }
+
+    public void setTipo(String tipo) {
+        this.tipo = tipo;
     }
 
     public String getDescricao() {
         return descricao;
     }
 
-    public void setDescricao(String descrição) {
-        this.descricao = descrição;
+    public void setDescricao(String descricao) {
+        this.descricao = descricao;
     }
 
-    public String getFornecedor() {
-        return fornecedor ;
+    public String getMarca() {
+        return marca;
     }
 
-    public void setFornecedor(String fornecedor ) {
-        this.fornecedor  = fornecedor ;
+    public void setMarca(String marca) {
+        this.marca = marca;
     }
 
-    public float getCusto() {
-        return custo;
+    public float getValor() {
+        return valor;
     }
 
-    public void setCusto(float custo) {
-        this.custo = custo;
+    public void setValor(float valor) {
+        this.valor = valor;
     }
-     public float getVenda() {
-        return venda;
-    }
-
-    public void setVenda(float venda) {
-        this.venda = venda;
-    }
-     public float getICMS() {
-        return icms;
-    }
-
-    public void setICMS(float icms) {
-        this.icms = icms;
-    }
+    
 
     public void limpaProduto(){
-    produto =  "";
-    tamanho = 0;
+    produtos =  "";
+    tipo = "";
     descricao = "";
-    fornecedor = "";
-    custo = 0;
-    venda = 0;
-    icms = 0;
+    marca = "";
+    valor = 0;
+    embalagem = "";
+    tamanho = 0;
     }
 }

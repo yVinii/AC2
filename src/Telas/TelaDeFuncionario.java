@@ -43,8 +43,8 @@ public class TelaDeFuncionario extends javax.swing.JFrame {
         butFechar = new javax.swing.JLabel();
         butConfig = new javax.swing.JLabel();
         butFuncionario = new javax.swing.JLabel();
-        butProduto = new javax.swing.JLabel();
         butIncio = new javax.swing.JLabel();
+        butProduto = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -261,17 +261,6 @@ public class TelaDeFuncionario extends javax.swing.JFrame {
         });
         getContentPane().add(butFuncionario, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 370, 170, 70));
 
-        butProduto.setFont(new java.awt.Font("Segoe UI", 1, 22)); // NOI18N
-        butProduto.setForeground(new java.awt.Color(0, 0, 51));
-        butProduto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/icons8-product-30.png"))); // NOI18N
-        butProduto.setText("Produto.");
-        butProduto.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                butProdutoMouseClicked(evt);
-            }
-        });
-        getContentPane().add(butProduto, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 290, 160, 70));
-
         butIncio.setFont(new java.awt.Font("Segoe UI", 1, 22)); // NOI18N
         butIncio.setForeground(new java.awt.Color(0, 0, 51));
         butIncio.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/icons8-home-page-40.png"))); // NOI18N
@@ -282,6 +271,17 @@ public class TelaDeFuncionario extends javax.swing.JFrame {
             }
         });
         getContentPane().add(butIncio, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 210, 170, 70));
+
+        butProduto.setFont(new java.awt.Font("Segoe UI", 1, 22)); // NOI18N
+        butProduto.setForeground(new java.awt.Color(0, 0, 51));
+        butProduto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/icons8-pets-30.png"))); // NOI18N
+        butProduto.setText("Funções");
+        butProduto.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                butProdutoMouseClicked(evt);
+            }
+        });
+        getContentPane().add(butProduto, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 290, 160, 70));
 
         pack();
         setLocationRelativeTo(null);
@@ -302,12 +302,6 @@ public class TelaDeFuncionario extends javax.swing.JFrame {
         minhaTela.setVisible(true);
         dispose();
     }//GEN-LAST:event_butFuncionarioMouseClicked
-
-    private void butProdutoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_butProdutoMouseClicked
-        TelaDeProduto minhaTela = new TelaDeProduto();
-        minhaTela.setVisible(true);
-        dispose();
-    }//GEN-LAST:event_butProdutoMouseClicked
 
     private void butIncioMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_butIncioMouseClicked
         TelaDeInicio minhaTela = new TelaDeInicio();
@@ -432,6 +426,12 @@ public class TelaDeFuncionario extends javax.swing.JFrame {
     private void butLimparMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_butLimparMouseClicked
         apagaBusca();
     }//GEN-LAST:event_butLimparMouseClicked
+
+    private void butProdutoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_butProdutoMouseClicked
+        TelaDeProduto minhaTela = new TelaDeProduto();
+        minhaTela.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_butProdutoMouseClicked
     public void apagaCadastro(){
         txtNome.setText("");
         txtCPF.setText("");
