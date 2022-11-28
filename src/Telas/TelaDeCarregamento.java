@@ -6,6 +6,7 @@ import java.util.logging.Logger;
 public class TelaDeCarregamento extends javax.swing.JFrame {
     public TelaDeCarregamento() {
         initComponents();
+        this.setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("/Imagens//icons8-vaporwave-64.png"))); // Define Icone
         new Thread(){
            public void run() {
                 for (int i = 0; i < 101; i++) {

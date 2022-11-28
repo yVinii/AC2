@@ -1,6 +1,7 @@
 package Telas;
 import Classes.Login;
 import Conexoes.MySQL;
+import java.awt.Toolkit;
 import javax.swing.JOptionPane;
 
 public class TelaDeConfig extends javax.swing.JFrame {
@@ -9,6 +10,7 @@ public class TelaDeConfig extends javax.swing.JFrame {
     public TelaDeConfig() {
         initComponents();
         mySQLcon = new MySQL();
+        this.setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("/Imagens//icons8-vaporwave-64.png"))); // Define Icone
     }
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -235,10 +237,10 @@ public class TelaDeConfig extends javax.swing.JFrame {
         jPanel4.add(jPanel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 200, 160, 160));
 
         jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/icons8-person-100.png"))); // NOI18N
-        jPanel4.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 30, -1, 120));
+        jPanel4.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 70, -1, 120));
 
         jLabel10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/icons8-summary-list-100.png"))); // NOI18N
-        jPanel4.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 30, -1, 120));
+        jPanel4.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 70, -1, 120));
 
         jTabbedPane1.addTab("Busca", jPanel4);
 
@@ -266,8 +268,8 @@ public class TelaDeConfig extends javax.swing.JFrame {
 
         jLabel6.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(0, 0, 51));
-        jLabel6.setText("Usuário.");
-        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 20, 220, 70));
+        jLabel6.setText("Configurações.");
+        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 20, 260, 70));
 
         butIncio.setFont(new java.awt.Font("Segoe UI", 1, 22)); // NOI18N
         butIncio.setForeground(new java.awt.Color(0, 0, 51));
@@ -472,7 +474,9 @@ public class TelaDeConfig extends javax.swing.JFrame {
     }//GEN-LAST:event_butExcluirMouseClicked
 
     private void butFuncionarioMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_butFuncionarioMouseClicked
-        // TODO add your handling code here:
+        TelaDeFuncionario minhaTela = new TelaDeFuncionario();
+        minhaTela.setVisible(true);
+        dispose();
     }//GEN-LAST:event_butFuncionarioMouseClicked
 
     private void butProdutoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_butProdutoMouseClicked

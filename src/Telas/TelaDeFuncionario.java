@@ -3,6 +3,7 @@ package Telas;
 import Conexoes.MySQL;
 import javax.swing.JOptionPane;
 import Classes.Funcionario;
+import java.awt.Toolkit;
 
 public class TelaDeFuncionario extends javax.swing.JFrame {
     MySQL mySQLcon;
@@ -10,6 +11,7 @@ public class TelaDeFuncionario extends javax.swing.JFrame {
     public TelaDeFuncionario() {
         initComponents();
         mySQLcon = new MySQL();
+        this.setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("/Imagens//icons8-vaporwave-64.png"))); // Define Icone
     }
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -24,6 +26,8 @@ public class TelaDeFuncionario extends javax.swing.JFrame {
         txtNome = new javax.swing.JTextField();
         jLabel8 = new javax.swing.JLabel();
         txtCPF = new javax.swing.JFormattedTextField();
+        txtProfi = new javax.swing.JTextField();
+        jLabel11 = new javax.swing.JLabel();
         jPanel4 = new javax.swing.JPanel();
         butAtualizar = new javax.swing.JLabel();
         butExcluir = new javax.swing.JLabel();
@@ -35,6 +39,8 @@ public class TelaDeFuncionario extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
         txtEmail1 = new javax.swing.JTextField();
+        jLabel12 = new javax.swing.JLabel();
+        txtProfi1 = new javax.swing.JTextField();
         jPanel2 = new javax.swing.JPanel();
         jPanel3 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
@@ -65,7 +71,7 @@ public class TelaDeFuncionario extends javax.swing.JFrame {
                 butCadastrarMouseClicked(evt);
             }
         });
-        jPanel1.add(butCadastrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 230, 240, 90));
+        jPanel1.add(butCadastrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 290, 240, 90));
 
         jLabel7.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(0, 0, 51));
@@ -74,21 +80,21 @@ public class TelaDeFuncionario extends javax.swing.JFrame {
 
         txtEmail.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
         txtEmail.setForeground(new java.awt.Color(0, 0, 51));
-        jPanel1.add(txtEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 90, 360, 70));
+        jPanel1.add(txtEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 90, 350, 60));
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(0, 0, 51));
         jLabel1.setText("CPF.");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 170, 150, 70));
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 150, 150, 70));
 
         txtNome.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
         txtNome.setForeground(new java.awt.Color(0, 0, 51));
-        jPanel1.add(txtNome, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 90, 250, 70));
+        jPanel1.add(txtNome, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 90, 240, 60));
 
         jLabel8.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(0, 0, 51));
-        jLabel8.setText("Nome.");
-        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 150, 70));
+        jLabel8.setText("Profissão.");
+        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 150, 180, 70));
 
         txtCPF.setForeground(new java.awt.Color(0, 0, 51));
         try {
@@ -97,7 +103,16 @@ public class TelaDeFuncionario extends javax.swing.JFrame {
             ex.printStackTrace();
         }
         txtCPF.setFont(new java.awt.Font("Segoe UI", 0, 30)); // NOI18N
-        jPanel1.add(txtCPF, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 240, 250, 70));
+        jPanel1.add(txtCPF, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 220, 240, 60));
+
+        txtProfi.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
+        txtProfi.setForeground(new java.awt.Color(0, 0, 51));
+        jPanel1.add(txtProfi, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 220, 240, 60));
+
+        jLabel11.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
+        jLabel11.setForeground(new java.awt.Color(0, 0, 51));
+        jLabel11.setText("Nome.");
+        jPanel1.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 150, 70));
 
         jTabbedPane1.addTab("Cadastro", jPanel1);
 
@@ -137,7 +152,7 @@ public class TelaDeFuncionario extends javax.swing.JFrame {
                 butBuscarMouseClicked(evt);
             }
         });
-        jPanel4.add(butBuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 210, 125, 40));
+        jPanel4.add(butBuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 310, 125, 40));
 
         butLimpar.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         butLimpar.setForeground(new java.awt.Color(0, 0, 51));
@@ -149,16 +164,16 @@ public class TelaDeFuncionario extends javax.swing.JFrame {
                 butLimparMouseClicked(evt);
             }
         });
-        jPanel4.add(butLimpar, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 210, 125, 40));
+        jPanel4.add(butLimpar, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 310, 125, 40));
 
         jLabel9.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
         jLabel9.setForeground(new java.awt.Color(0, 0, 51));
         jLabel9.setText("Nome.");
-        jPanel4.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 180, 150, 70));
+        jPanel4.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 160, 150, 60));
 
         txtNome1.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
         txtNome1.setForeground(new java.awt.Color(0, 0, 51));
-        jPanel4.add(txtNome1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 250, 250, 70));
+        jPanel4.add(txtNome1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 220, 250, 60));
 
         txtCPF1.setForeground(new java.awt.Color(0, 0, 51));
         try {
@@ -167,12 +182,12 @@ public class TelaDeFuncionario extends javax.swing.JFrame {
             ex.printStackTrace();
         }
         txtCPF1.setFont(new java.awt.Font("Segoe UI", 1, 30)); // NOI18N
-        jPanel4.add(txtCPF1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 90, 250, 70));
+        jPanel4.add(txtCPF1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 90, 240, 60));
 
         jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(0, 0, 51));
         jLabel3.setText("CPF.");
-        jPanel4.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, 150, 70));
+        jPanel4.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 150, 70));
 
         jLabel10.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
         jLabel10.setForeground(new java.awt.Color(0, 0, 51));
@@ -181,7 +196,16 @@ public class TelaDeFuncionario extends javax.swing.JFrame {
 
         txtEmail1.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
         txtEmail1.setForeground(new java.awt.Color(0, 0, 51));
-        jPanel4.add(txtEmail1, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 90, 360, 70));
+        jPanel4.add(txtEmail1, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 90, 350, 60));
+
+        jLabel12.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
+        jLabel12.setForeground(new java.awt.Color(0, 0, 51));
+        jLabel12.setText("Profissão.");
+        jPanel4.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 160, 180, 60));
+
+        txtProfi1.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
+        txtProfi1.setForeground(new java.awt.Color(0, 0, 51));
+        jPanel4.add(txtProfi1, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 220, 240, 60));
 
         jTabbedPane1.addTab("Busca", jPanel4);
 
@@ -317,15 +341,19 @@ public class TelaDeFuncionario extends javax.swing.JFrame {
         novoFuncionario.setNome(txtNome.getText());
         novoFuncionario.setCpf(txtCPF.getText());;
         novoFuncionario.setEmail(txtEmail.getText());
+        novoFuncionario.setProfissao(txtProfi.getText());
+        
         try {
             status = this.mySQLcon.insertSQL("INSERT INTO funcionario ("
                 + "nome,"
                 + "cpf,"
-                + "email"
+                + "email,"
+                + "profissao"
                 + ") VALUES ("
                 + "'" + novoFuncionario.getNome() + "',"
                 + "'" + novoFuncionario.getCpf() + "',"
-                + "'" + novoFuncionario.getEmail() + "'"
+                + "'" + novoFuncionario.getEmail() + "',"
+                + "'" + novoFuncionario.getProfissao() +"'"
                 + ");");
             if(status == 1){
                 JOptionPane.showMessageDialog(null, "Funcionário cadastrado com sucesso");
@@ -350,7 +378,8 @@ public class TelaDeFuncionario extends javax.swing.JFrame {
             "UPDATE funcionario SET "
             + "nome = '" + txtNome1.getText() + "',"
             + "cpf = '" + txtCPF1.getText() + "',"
-            + "email = '" + txtEmail1.getText() + "'"
+            + "email = '" + txtEmail1.getText() + "',"
+            + "profissao = '" + txtProfi1.getText() + "'"
             + " WHERE "
             + "cpf = '" + cpf + "'"
             + ";"
@@ -397,7 +426,8 @@ public class TelaDeFuncionario extends javax.swing.JFrame {
             "SELECT "
             + "nome,"
             + "cpf,"
-            + "email"
+            + "email,"
+            + "profissao"
             + " FROM"
             + " funcionario"
             + " WHERE"
@@ -408,6 +438,7 @@ public class TelaDeFuncionario extends javax.swing.JFrame {
             novoFuncionario.setNome(mySQLcon.getResultSet().getString(1));
             novoFuncionario.setCpf(mySQLcon.getResultSet().getString(2));
             novoFuncionario.setEmail(mySQLcon.getResultSet().getString(3));
+            novoFuncionario.setProfissao(mySQLcon.getResultSet().getString(4));
         }
         if(novoFuncionario.getNome().equals("")){
             JOptionPane.showMessageDialog(null, "Houve algum problema ao consultar cadastro");
@@ -415,6 +446,7 @@ public class TelaDeFuncionario extends javax.swing.JFrame {
             txtNome1.setText(novoFuncionario.getNome());
             txtCPF1.setText(novoFuncionario.getCpf());
             txtEmail1.setText(novoFuncionario.getEmail());
+            txtProfi1.setText(novoFuncionario.getProfissao());
 
         }
         } catch (Exception e) {
@@ -436,11 +468,13 @@ public class TelaDeFuncionario extends javax.swing.JFrame {
         txtNome.setText("");
         txtCPF.setText("");
         txtEmail.setText("");
+        txtProfi.setText("");
     }
     public void apagaBusca(){
         txtNome1.setText("");
         txtCPF1.setText("");
         txtEmail1.setText("");
+        txtProfi1.setText("");
     }
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
@@ -487,6 +521,8 @@ public class TelaDeFuncionario extends javax.swing.JFrame {
     private javax.swing.JLabel butProduto;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -505,5 +541,7 @@ public class TelaDeFuncionario extends javax.swing.JFrame {
     private javax.swing.JTextField txtEmail1;
     private javax.swing.JTextField txtNome;
     private javax.swing.JTextField txtNome1;
+    private javax.swing.JTextField txtProfi;
+    private javax.swing.JTextField txtProfi1;
     // End of variables declaration//GEN-END:variables
 }

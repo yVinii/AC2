@@ -4,6 +4,8 @@
  */
 package Telas;
 
+import java.awt.Toolkit;
+
 /**
  *
  * @author aluno
@@ -15,6 +17,7 @@ public class TelaDeInicio extends javax.swing.JFrame {
      */
     public TelaDeInicio() {
         initComponents();
+        this.setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("/Imagens//icons8-vaporwave-64.png"))); // Define Icone
     }
 
     /**
@@ -29,12 +32,12 @@ public class TelaDeInicio extends javax.swing.JFrame {
         jPanel2 = new javax.swing.JPanel();
         jPanel3 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
+        but2 = new javax.swing.JLabel();
         butFechar = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
+        but3 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
+        but1 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         butFuncionario = new javax.swing.JLabel();
         butIncio = new javax.swing.JLabel();
@@ -81,10 +84,15 @@ public class TelaDeInicio extends javax.swing.JFrame {
         jLabel2.setText("Menu.");
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, 110, 70));
 
-        jLabel5.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(0, 0, 51));
-        jLabel5.setText("Clique Aqui");
-        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 280, 200, 70));
+        but2.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        but2.setForeground(new java.awt.Color(0, 0, 51));
+        but2.setText("Clique Aqui.");
+        but2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                but2MouseClicked(evt);
+            }
+        });
+        getContentPane().add(but2, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 240, 150, 70));
 
         butFechar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/icons8-fechar-janela-48.png"))); // NOI18N
         butFechar.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -94,15 +102,22 @@ public class TelaDeInicio extends javax.swing.JFrame {
         });
         getContentPane().add(butFechar, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 20, 50, 50));
 
-        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 48)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(0, 0, 51));
-        jLabel1.setText("               GIF");
-        jLabel1.setPreferredSize(new java.awt.Dimension(455, 225));
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 270, 455, 255));
+        but3.setFont(new java.awt.Font("Segoe UI", 1, 48)); // NOI18N
+        but3.setForeground(new java.awt.Color(0, 0, 51));
+        but3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/VET.gif"))); // NOI18N
+        but3.setText("\n");
+        but3.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(0, 0, 51)));
+        but3.setPreferredSize(new java.awt.Dimension(455, 225));
+        but3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                but3MouseClicked(evt);
+            }
+        });
+        getContentPane().add(but3, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 260, -1, -1));
 
         jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(0, 0, 51));
-        jLabel3.setText("Cadastre os nossos produtos");
+        jLabel3.setText("Veja nossas funções.");
         getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 180, 510, 70));
 
         jLabel6.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
@@ -110,8 +125,13 @@ public class TelaDeInicio extends javax.swing.JFrame {
         jLabel6.setText("Início.");
         getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 20, 170, 70));
 
-        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/icons8-abaixo-à-direita-dentro-de-um-círculo-60.png"))); // NOI18N
-        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 350, 60, 70));
+        but1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/icons8-abaixo-à-direita-dentro-de-um-círculo-60.png"))); // NOI18N
+        but1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                but1MouseClicked(evt);
+            }
+        });
+        getContentPane().add(but1, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 250, 60, 70));
 
         jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/marca dagua (1).png"))); // NOI18N
         getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 10, 200, -1));
@@ -192,6 +212,24 @@ public class TelaDeInicio extends javax.swing.JFrame {
         dispose();
     }//GEN-LAST:event_butConfigMouseClicked
 
+    private void but2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_but2MouseClicked
+        TelaDeProduto minhaTela = new TelaDeProduto();
+        minhaTela.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_but2MouseClicked
+
+    private void but1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_but1MouseClicked
+        TelaDeProduto minhaTela = new TelaDeProduto();
+        minhaTela.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_but1MouseClicked
+
+    private void but3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_but3MouseClicked
+        TelaDeProduto minhaTela = new TelaDeProduto();
+        minhaTela.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_but3MouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -228,16 +266,16 @@ public class TelaDeInicio extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel but1;
+    private javax.swing.JLabel but2;
+    private javax.swing.JLabel but3;
     private javax.swing.JLabel butConfig;
     private javax.swing.JLabel butFechar;
     private javax.swing.JLabel butFuncionario;
     private javax.swing.JLabel butIncio;
     private javax.swing.JLabel butProduto;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JPanel jPanel2;

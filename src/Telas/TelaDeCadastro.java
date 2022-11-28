@@ -1,6 +1,7 @@
 package Telas;
 import Classes.Login;
 import Conexoes.MySQL;
+import java.awt.Toolkit;
 import javax.swing.JOptionPane;
 
 public class TelaDeCadastro extends javax.swing.JFrame {
@@ -9,6 +10,7 @@ public class TelaDeCadastro extends javax.swing.JFrame {
     public TelaDeCadastro() {
         initComponents();
         mySQLcon = new MySQL();
+        this.setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("/Imagens//icons8-vaporwave-64.png"))); // Define Icone
     }
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents

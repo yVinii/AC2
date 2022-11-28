@@ -4,8 +4,16 @@ public class Funcionario {
     private String nome = "";
     private String cpf = "";
     private String email = "";
-
+    private String profissao = "";
     // Métodos: 
+
+    public String getProfissao() {
+        return profissao;
+    }
+
+    public void setProfissao(String profissao) {
+        this.profissao = profissao;
+    }
 
     public String getEmail() {
         return email;
@@ -36,5 +44,6 @@ public class Funcionario {
     nome =  "";
     cpf = "";
     email = "";
+    profissao = "";
     }
 }
