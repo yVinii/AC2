@@ -1,0 +1,137 @@
+CREATE DATABASE  IF NOT EXISTS `banco_loja`;
+USE `banco_loja`;
+
+drop table if exists `acessorios`;
+create table acessorios(
+id int auto_increment primary key,
+nome varchar(100)
+);
+insert into acessorios values(null,"Roupa");
+insert into acessorios values(null,"Cama");
+insert into acessorios values(null,"Casa");
+insert into acessorios values(null,"Gaiola");
+insert into acessorios values(null,"Labirinto");
+insert into acessorios values(null,"Caixa de Transporte");
+insert into acessorios values(null,"Banheiro");
+insert into acessorios values(null,"Pote");
+insert into acessorios values(null,"Bebedouro");
+
+drop table if exists `brinquedo`;
+create table brinquedo(
+id int auto_increment primary key,
+nome varchar(100)
+);
+insert into brinquedo values(null,"Bolinha");
+insert into brinquedo values(null,"Osso");
+insert into brinquedo values(null,"Arranhador de Gato");
+insert into brinquedo values(null,"Novelo de Lã");
+insert into brinquedo values(null,"Mordedor");
+insert into brinquedo values(null,"Puxador");
+insert into brinquedo values(null,"Bixinho de Borracha");
+insert into brinquedo values(null,"Balanço");
+
+drop table if exists `cirurgia`;
+create table cirurgia(
+id int primary key auto_increment,
+nome varchar(100)
+);
+insert into cirurgia values(null,"Cesariana");
+insert into cirurgia values(null,"Hérnias");
+insert into cirurgia values(null,"Cistotomia");
+insert into cirurgia values(null,"Caudectomia");
+insert into cirurgia values(null,"Gastrotomias");
+insert into cirurgia values(null,"Laparotomias");
+insert into cirurgia values(null,"Castração");
+
+drop table if exists `consulta`;
+create table consulta(
+id int primary key auto_increment,
+nome varchar(100)
+);
+insert into consulta values(null,"Rotineira");
+insert into consulta values(null,"Comum");
+insert into consulta values(null,"Detalhada");
+
+drop table if exists `internacao`;
+create table internacao(
+id int primary key auto_increment,
+nome varchar(100)
+);
+insert into internacao values(null,"Grave");
+insert into internacao values(null,"Comum");
+insert into internacao values(null,"Emergencial");
+
+drop table if exists `vacina`;
+create table vacina(
+id int primary key auto_increment,
+nome varchar(100)
+);
+
+insert into vacina values (null,"Cinomose");
+insert into vacina values (null,"Parvovirose");
+insert into vacina values (null,"Coronavirose");
+insert into vacina values (null,"Hepatite");
+insert into vacina values (null,"Adenovirose");
+insert into vacina values (null,"Parainfluenza");
+
+drop table if exists `higiene`;
+create table higiene(
+id int primary key auto_increment,
+nome varchar(100)
+);
+
+insert into higiene values(null,"Banho");
+insert into higiene values(null,"Banho e tosa");
+
+drop table if exists `racao`;
+create table racao(
+id int primary key auto_increment,
+nome varchar(100)
+);
+
+insert into racao values(null,"Gato");
+insert into racao values(null,"Cachorro");
+insert into racao values(null,"Hamster");
+insert into racao values(null,"Pássaro");
+insert into racao values(null,"Peixe");
+insert into racao values(null,"Cavalo");
+insert into racao values(null,"Coelho");
+
+drop table if exists `funcionario`;
+create table funcionario(
+id int auto_increment primary key,
+nome varchar(100),
+cpf varchar(45),
+email varchar(45),
+profissao varchar(45)
+);
+
+drop table if exists `login`;
+create table login(
+id int primary key auto_increment,
+usuario varchar(45),
+senha varchar(45)
+);
+
+drop table if exists `produto`;
+create table produto(
+id int primary key auto_increment,
+tipo varchar(100),
+produtos varchar(100),
+valor float,
+marca varchar(45),
+descricao varchar(256),
+tamanho float,
+embalagem varchar(45)
+);
+
+drop table if exists `tratamentos`;
+create table tratamentos(
+id int primary key auto_increment,
+tipo varchar(100),
+especial varchar(100),
+especie varchar(100),
+sexo varchar(100),
+nome varchar(100),
+custo float
+);
